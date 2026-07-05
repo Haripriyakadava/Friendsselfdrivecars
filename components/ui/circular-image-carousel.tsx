@@ -116,6 +116,7 @@ export const CircularImageCarousel = ({
             src={src} 
             alt={`Carousel Image ${index + 1}`} 
             fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectPosition: 'center 65%' }}
             className="object-cover" 
           />

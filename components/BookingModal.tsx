@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Clock, MapPin, AlertCircle, Info } from "lucide-react";
+import { X, Calendar, Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 
 interface Car {
@@ -95,7 +95,7 @@ Thank you! 😊`;
               </div>
 
               <div className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden mb-4 shadow-sm bg-slate-100">
-                <Image src={car.image} alt={car.name} fill style={{ objectPosition: 'center 65%' }} className="object-cover" />
+                <Image src={car.image} alt={car.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectPosition: car.name === 'Mahindra Thar' ? 'center 80%' : 'center 65%' }} className="object-cover" />
               </div>
 
               <h3 className="text-lg font-bold text-slate-900 mb-2">Car Specifications</h3>
@@ -151,23 +151,29 @@ Thank you! 😊`;
                   <label className="flex items-center gap-2 text-sm font-bold text-slate-700 mb-2">
                     <Calendar size={16} className="text-yellow-500" /> Pickup Date
                   </label>
-                  <input 
-                    type="date" 
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition" 
-                  />
+                  <div className="relative">
+                    <input 
+                      type="date" 
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
+                    />
+                    <Calendar size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-800 pointer-events-none" />
+                  </div>
                 </div>
                 <div>
                   <label className="flex items-center gap-2 text-sm font-bold text-slate-700 mb-2">
                     <Clock size={16} className="text-yellow-500" /> Pickup Time
                   </label>
-                  <input 
-                    type="time" 
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition" 
-                  />
+                  <div className="relative">
+                    <input 
+                      type="time" 
+                      value={time}
+                      onChange={(e) => setTime(e.target.value)}
+                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
+                    />
+                    <Clock size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-800 pointer-events-none" />
+                  </div>
                 </div>
               </div>
 
@@ -198,14 +204,6 @@ Thank you! 😊`;
                 <div className="flex gap-3 items-start">
                   <MapPin size={18} className="text-rose-500 mt-0.5 shrink-0" />
                   <p className="text-sm font-medium text-slate-500 leading-relaxed">Pickup Points: Nellore, Mypadu Gate, Kotha Kaluva Centre</p>
-                </div>
-                <div className="flex gap-3 items-start">
-                  <AlertCircle size={18} className="text-amber-500 mt-0.5 shrink-0" />
-                  <p className="text-sm font-medium text-slate-500 leading-relaxed">Refundable security deposit of ₹3000 required.</p>
-                </div>
-                <div className="flex gap-3 items-start">
-                  <Info size={18} className="text-blue-500 mt-0.5 shrink-0" />
-                  <p className="text-sm font-medium text-slate-500 leading-relaxed">Fuel is not included in the rental price.</p>
                 </div>
               </div>
 

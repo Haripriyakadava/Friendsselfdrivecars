@@ -3,7 +3,7 @@
 import StatsCard from "./StatsCard";
 import SearchCard from "./SearchCard";
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Phone } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -82,12 +82,16 @@ export default function Hero() {
               className="mt-6 flex gap-4"
             >
               <a
-                href="https://wa.me/917396764478"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-yellow-400 px-6 py-3 font-bold text-slate-900 shadow-xl transition-all duration-300 hover:scale-105 hover:bg-yellow-500 flex items-center gap-2"
+                href="tel:+917396764478"
+                className="rounded-full bg-white/90 backdrop-blur-xl px-4 py-2 shadow-xl border border-white/40 transition-all duration-300 hover:scale-105 flex items-center gap-3"
               >
-                Book Now
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                  <Phone className="text-blue-600 w-5 h-5" />
+                </div>
+                <div className="text-left leading-tight pr-2">
+                  <p className="text-sm font-bold text-slate-800">Call Us</p>
+                  <p className="text-xs text-gray-600">+91 73967 64478</p>
+                </div>
               </a>
 
               <button

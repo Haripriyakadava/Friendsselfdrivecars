@@ -6,7 +6,7 @@ import CountUp from "react-countup";
 const stats = [
   {
     icon: Car,
-    value: 150,
+    value: 10,
     suffix: "+",
     title: "Premium Cars",
   },

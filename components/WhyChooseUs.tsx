@@ -16,8 +16,8 @@ import { CircularImageCarousel } from "@/components/ui/circular-image-carousel";
 
 const carouselImages = [
   "/ertiga.jpeg",
-  "/swiftdzire.jpeg",
-  "/thar.jpeg",
+  "/swiftdzire.png",
+  "/thar.png",
   "/hyundaicreta.png",
   "/baleno.png",
 ];
@@ -32,6 +32,28 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFF]/90 via-[#F8FAFF]/40 to-[#F8FAFF]/90"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
+        {/* Mobile Heading */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="lg:hidden mb-10"
+        >
+          <div className="inline-block bg-yellow-100/50 border border-yellow-200 text-yellow-600 font-bold px-4 py-1.5 rounded-full text-[11px] tracking-[2px] w-max mb-5 uppercase">
+            About Friends Self Drive Cars
+          </div>
+          
+          <div>
+            <h2 className="text-4xl font-black text-slate-900 leading-[1.15]">
+              Driven by Freedom.<br/>
+              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-blue-500">Every<br/>Journey.</span>
+            </h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-violet-100 rounded-full mt-5"></div>
+          </div>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left: Image Carousel with Floating Badges */}
@@ -127,16 +149,18 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="inline-block bg-yellow-100/50 border border-yellow-200 text-yellow-600 font-bold px-4 py-1.5 rounded-full text-xs tracking-[2px] w-max mb-6 uppercase">
-              About Friends Self Drive Cars
-            </div>
-            
-            <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.15]">
-                Driven by Freedom.<br/>
-                Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-blue-500">Every<br/>Journey.</span>
-              </h2>
-              <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-violet-100 rounded-full mt-5"></div>
+            <div className="hidden lg:block">
+              <div className="inline-block bg-yellow-100/50 border border-yellow-200 text-yellow-600 font-bold px-4 py-1.5 rounded-full text-xs tracking-[2px] w-max mb-6 uppercase">
+                About Friends Self Drive Cars
+              </div>
+              
+              <div className="mb-8">
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.15]">
+                  Driven by Freedom.<br/>
+                  Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-blue-500">Every<br/>Journey.</span>
+                </h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-violet-100 rounded-full mt-5"></div>
+              </div>
             </div>
             
             <div className="space-y-5 text-slate-500 font-medium leading-[1.8] text-[16px] mb-10">

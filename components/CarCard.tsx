@@ -35,7 +35,8 @@ export default function CarCard({ car, onBookNow }: CarProps) {
           src={car.image}
           alt={car.name}
           fill
-          style={{ objectPosition: 'center 65%' }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectPosition: car.name === 'Mahindra Thar' ? 'center 80%' : 'center 65%' }}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         
