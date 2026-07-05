@@ -153,10 +153,15 @@ Thank you! 😊`;
                   </label>
                   <div className="relative">
                     <input 
-                      type="date" 
+                      type={date ? "date" : "text"}
+                      placeholder="Select Date"
+                      onFocus={(e) => (e.target.type = "date")}
+                      onBlur={(e) => {
+                        if (!e.target.value) e.target.type = "text";
+                      }}
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
+                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-slate-900 placeholder:text-slate-400 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
                     />
                     <Calendar size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-800 pointer-events-none" />
                   </div>
@@ -167,10 +172,15 @@ Thank you! 😊`;
                   </label>
                   <div className="relative">
                     <input 
-                      type="time" 
+                      type={time ? "time" : "text"}
+                      placeholder="Select Time"
+                      onFocus={(e) => (e.target.type = "time")}
+                      onBlur={(e) => {
+                        if (!e.target.value) e.target.type = "text";
+                      }}
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
-                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
+                      className="w-full rounded-xl border border-slate-200 pl-4 pr-10 py-2.5 text-slate-900 placeholder:text-slate-400 text-sm font-medium focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition bg-white [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:h-full" 
                     />
                     <Clock size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-800 pointer-events-none" />
                   </div>
@@ -178,20 +188,20 @@ Thank you! 😊`;
               </div>
 
               <h3 className="text-sm font-bold text-slate-700 mb-2">Rental Duration</h3>
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 mb-4">
                 <button
                   onClick={() => setDuration("12")}
-                  className={`rounded-2xl border-2 py-4 text-center transition-all ${duration === "12" ? "border-yellow-400 bg-yellow-50/50 shadow-sm" : "border-slate-100 bg-white hover:border-slate-200"}`}
+                  className={`rounded-2xl border-2 py-3 md:py-4 text-center transition-all ${duration === "12" ? "border-yellow-400 bg-yellow-50/50 shadow-sm" : "border-slate-100 bg-white hover:border-slate-200"}`}
                 >
-                  <p className={`text-xs font-bold mb-1 uppercase tracking-wider ${duration === "12" ? "text-yellow-600" : "text-slate-400"}`}>12 Hours</p>
-                  <p className="text-2xl font-black text-slate-900">{car.price12h}</p>
+                  <p className={`text-[10px] md:text-xs font-bold mb-1 uppercase tracking-wider ${duration === "12" ? "text-yellow-600" : "text-slate-400"}`}>12 Hours</p>
+                  <p className="text-xl md:text-2xl font-black text-slate-900">{car.price12h}</p>
                 </button>
                 <button
                   onClick={() => setDuration("24")}
-                  className={`rounded-2xl border-2 py-4 text-center transition-all ${duration === "24" ? "border-yellow-400 bg-yellow-50/50 shadow-sm" : "border-slate-100 bg-white hover:border-slate-200"}`}
+                  className={`rounded-2xl border-2 py-3 md:py-4 text-center transition-all ${duration === "24" ? "border-yellow-400 bg-yellow-50/50 shadow-sm" : "border-slate-100 bg-white hover:border-slate-200"}`}
                 >
-                  <p className={`text-xs font-bold mb-1 uppercase tracking-wider ${duration === "24" ? "text-yellow-600" : "text-slate-400"}`}>24 Hours</p>
-                  <p className="text-2xl font-black text-slate-900">{car.price24h}</p>
+                  <p className={`text-[10px] md:text-xs font-bold mb-1 uppercase tracking-wider ${duration === "24" ? "text-yellow-600" : "text-slate-400"}`}>24 Hours</p>
+                  <p className="text-xl md:text-2xl font-black text-slate-900">{car.price24h}</p>
                 </button>
               </div>
 

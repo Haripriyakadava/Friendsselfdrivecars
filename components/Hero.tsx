@@ -22,7 +22,7 @@ export default function Hero() {
 
       {/* Content */}
 
-      <div className="relative z-10 flex h-full items-center -mt-24 lg:-mt-4">
+      <div className="relative z-10 flex h-full items-center mt-12 lg:-mt-4">
 
         <div className="w-full px-4 lg:px-12">
 
@@ -79,31 +79,31 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: .7 }}
-              className="mt-6 flex gap-4"
+              className="mt-6 flex flex-wrap gap-3 sm:gap-4"
             >
               <a
                 href="tel:+917396764478"
-                className="rounded-full bg-white/90 backdrop-blur-xl px-4 py-2 shadow-xl border border-white/40 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="rounded-full bg-white/90 backdrop-blur-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl border border-white/40 transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3"
               >
-                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                  <Phone className="text-blue-600 w-5 h-5" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <Phone className="text-blue-600 w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <div className="text-left leading-tight pr-2">
-                  <p className="text-sm font-bold text-slate-800">Call Us</p>
-                  <p className="text-xs text-gray-600">+91 73967 64478</p>
+                <div className="text-left leading-tight pr-1 sm:pr-2">
+                  <p className="text-xs sm:text-sm font-bold text-slate-800">Call Us</p>
+                  <p className="text-[10px] sm:text-xs text-gray-600">+91 73967 64478</p>
                 </div>
               </a>
 
               <button
                 onClick={() => document.getElementById('cars')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-full bg-white/90 backdrop-blur-xl px-6 py-3 font-semibold text-slate-900 shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                className="rounded-full bg-white/90 backdrop-blur-xl px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-slate-900 shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 View Cars
-                <ArrowRight size={16} />
+                <ArrowRight size={14} className="sm:w-4 sm:h-4" />
               </button>
             </motion.div>
 
-            <div className="mt-6">
+            <div className="mt-6 mb-32 lg:mb-0">
               <StatsCard />
             </div>
 
