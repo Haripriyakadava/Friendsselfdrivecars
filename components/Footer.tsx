@@ -66,7 +66,7 @@ export default function Footer() {
 
       {/* Top */}
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
 
         <div className="grid gap-12 lg:grid-cols-4">
 
@@ -77,10 +77,10 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="Friends Self Drive Cars"
-              className="h-24 w-auto object-left brightness-0 invert"
+              className="h-16 md:h-24 w-auto object-left brightness-0 invert"
             />
 
-            <p className="mt-6 text-gray-300 leading-8">
+            <p className="mt-4 md:mt-6 text-sm md:text-base text-gray-300 leading-relaxed md:leading-8">
               Premium self-drive car rental service providing
               safe, affordable and luxury vehicles for every trip.
             </p>
@@ -116,11 +116,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
               Quick Links
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
 
               {[
                 { name: "Home", href: "/#home" },
@@ -132,7 +132,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-gray-300 hover:text-yellow-400 transition"
+                  className="block text-sm md:text-base text-gray-300 hover:text-yellow-400 transition"
                 >
                   {item.name}
                 </a>
@@ -146,11 +146,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
               Our Services
             </h3>
 
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-300">
 
               <p>Self Drive Cars</p>
 
@@ -170,11 +170,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
               Contact
             </h3>
 
-            <div className="space-y-5">
+            <div className="space-y-4 md:space-y-5 text-sm md:text-base">
 
               <a href="tel:+917396764478" className="flex gap-4 hover:text-yellow-400 transition">
                 <Phone className="text-yellow-400" />
@@ -210,14 +210,14 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
 
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
 
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-center md:text-left">
             © {new Date().getFullYear()} Friends Self Drive Cars.
             All Rights Reserved.
           </p>
 
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
 
             <Link
               href="/privacy-policy"

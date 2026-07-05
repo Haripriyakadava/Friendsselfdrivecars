@@ -18,7 +18,7 @@ export default function Fleet() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <section id="cars" className="pt-28 pb-8 relative bg-cover bg-center" style={{ backgroundImage: "url('/ourfleet-bg.png')" }}>
+    <section id="cars" className="pt-64 lg:pt-28 pb-8 relative bg-cover bg-center" style={{ backgroundImage: "url('/ourfleet-bg.png')" }}>
       {/* Fog Overlay */}
       <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px]"></div>
 
